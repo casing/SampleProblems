@@ -18,7 +18,7 @@ public class MakeChange {
         StringBuilder sb = new StringBuilder();
         sb.append(amount);
         sb.append(" = {");
-        while(amount > 0 || coinIndex < 0) {
+        while(amount > 0 && coinIndex >= 0) {
             if(amount >= coins[coinIndex]) {
                 amount = amount - coins[coinIndex];
                 sb.append(coins[coinIndex]);
@@ -35,7 +35,7 @@ public class MakeChange {
     }
     
     public static void main(String[] args) {
-        int[]coins = new int[]{1, 5, 10, 25, 100, 200};
+        int[]coins = new int[]{5, 10, 25, 100, 200};
         System.out.println(minCoinsForChange(537, coins) + " coins to make change.");
     }
 }
